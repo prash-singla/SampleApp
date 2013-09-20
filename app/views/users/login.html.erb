@@ -1,0 +1,25 @@
+<h2>Listing users</h2>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.user_name %></td>        
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit User', edit_user_path(user) %></td>
+        <td><%= link_to 'Delete User', user_path(user), :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

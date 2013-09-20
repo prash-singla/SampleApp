@@ -1,0 +1,32 @@
+<h1></h1>
+<p id="notice"><%= notice %></p>
+
+<div class='row'>
+<div class="container" style="margin-top:10%;margin-left:20%">
+<ul class="list-inline pull-left">
+<li class="col-md-4">
+  <h2>Sign Up</h2>
+  <%= render 'form' %>
+</li>
+<li class="col-md-4"></li>
+<li class="col-md-4 ">
+  <h2>Sign In</h2>
+  <%= form_tag(:action =>'login') do %>
+    <div class="field">
+  	  <strong>Username :</strong></br> <%= text_field_tag :user_name %>
+  	</div>
+    <div class="password">
+     <strong>Password:</strong> </br> <%= password_field_tag :password %>
+    </div>
+    <div class="actions">
+     	<%= submit_tag value='Sign in' %>
+    </div>  	
+  <% end %>
+  </li>
+  </ul>
+  </div>
+
+  </div>
+
+
+  

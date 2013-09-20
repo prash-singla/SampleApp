@@ -1,0 +1,40 @@
+<ul class="nav nav-tabs">
+<li><%= link_to 'Home', user_path(:id =>@profile.user_id) %></li>
+<li class="active"><%= link_to 'Profile', user_profiles_path(:user_id =>@user) %></li>
+<li><%= link_to 'Update Profile', edit_user_profile_path(@profile.user_id, @profile) %></li>
+<li ><%= link_to 'LogOut', users_path %></li>
+</ul>
+<p id="notice"><%= notice %></p>
+<%= image_tag @profile.avatar.url %>
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+<p>
+  <strong>About:</strong>
+  <%= @profile.about %>
+</p>
+
+<p>
+  <strong>Hometown:</strong>
+  <%= @profile.hometown %>
+</p>
+
+<p>
+  <strong>Current City:</strong>
+  <%= @profile.currentcity %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @profile.occupation %>
+</p>
+
+<p>
+  <strong>Contact No.:</strong>
+  <%= @profile.contactno %>
+</p>

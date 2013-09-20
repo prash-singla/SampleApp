@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs">
+  
+  <li class="active"><%= link_to 'Profile', user_profiles_path(:user_id =>@user) %></li>
+  <li><%= link_to 'Edit', edit_user_path(@user) %></li>
+  <li><%= link_to 'Delete', user_path(@user), :method => :delete %></li>
+  <li><%= link_to 'LogOut', users_path %></li>
+</ul>
+<p id="notice"><%= notice %></p>
+
+<h2>Profile</h2>
+
+<%= render 'form' %>
+
+<!--<%= link_to 'Back', users_path %> -->

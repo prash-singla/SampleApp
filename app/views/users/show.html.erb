@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs">
+  <li class="active"><%= link_to 'Home', @user %></li>
+  <li><%= link_to 'View Profile', user_profiles_path(:user_id =>@user) %></li>
+  <li><%= link_to 'Update User', edit_user_path(@user) %></li>
+  <li><%= link_to 'Delete', user_path(@user), :method => :delete %></li>
+  <li><%= link_to 'LogOut', users_path %></li>
+</ul>
+<p id="notice"><%= notice %></p>
+<p><strong>Hello!</strong>
+	<%= @user.user_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
