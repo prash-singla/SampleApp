@@ -1,4 +1,4 @@
-<%= form_for([@user, @profile], :html => {:multipart => true}) do |f| %>
+<%= form_for([@user, @profile], :role =>"form", :html => {:multipart => true}) do |f| %>
 
     <% if @profile.errors.any? %>
       <div id="error_explanation">
@@ -11,41 +11,64 @@
         </ul>
       </div>
     <% end %>
+<div class="col-md-3" style="margin-left:20%">
 
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
   </div>
+
+<div class="form-group">
   <div class="field">
     <%= f.label :age %><br>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, :class => "form-control" %>
   </div>
+  </div>
+
   <div class="field">
+    <div class="form-group">
     <%= f.label :about %><br>
-    <%= f.text_field :about %>
+    <%= f.text_field :about, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :hometown %><br>
-    <%= f.text_field :hometown %>
   </div>
-  <div class="field">
-    <%= f.label :currentcity %><br>
-    <%= f.text_field :currentcity %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :hometown %><br>
+      <%= f.text_field :hometown, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :occupation %><br>
-    <%= f.text_field :occupation %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :currentcity %><br>
+      <%= f.text_field :currentcity, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :contactno %><br>
-    <%= f.number_field :contactno %>
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :occupation %><br>
+      <%= f.text_field :occupation, :class => "form-control" %>
+    </div>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :contactno %><br>
+      <%= f.number_field :contactno, :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
+  <div class="form-group">
+    <div class="field">
+      <strong>Upload Image:</strong>
+      <%= f.file_field :avatar,:type => "file" %>
+    </div>
   </div>
+
   <div class="actions">
+
     <%= f.submit value='Create'%>
   </div>
+</div>
 <% end %>

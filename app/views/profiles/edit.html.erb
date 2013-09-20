@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs ">
   
   <li><%= link_to 'Home', user_path(:id =>@profile.user_id) %></li>
   <li><%= link_to 'Profile', user_profiles_path(:user_id =>@user) %></li>
@@ -6,6 +6,6 @@
   <li><%= link_to 'LogOut', users_path %></li>
   
 </ul>
-<h3><strong>Updating Profile</strong></h3>
+<h3 style="margin-left:20%;margin-top:5%"><strong>Updating Profile</strong></h3>
 
 <%= render 'form' %>
