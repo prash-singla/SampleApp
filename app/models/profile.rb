@@ -3,9 +3,6 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   has_attached_file :avatar
 
-
-
-scope :in_city, ->(cuurrentcity) { where(currentcity: currentcity) }
-
+  scope :in_city, lambda { |city| {:conditions => ["currentcity = ?", city]} }
 
 end
