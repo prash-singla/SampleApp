@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   validates :email ,presence: true, uniqueness: true, confirmation: true, :format => EMAIL_REGEX
   validates_confirmation_of :email
 
+  scope :users_today, :conditions => ["created_at > ?", 1.day.ago]
+
  end

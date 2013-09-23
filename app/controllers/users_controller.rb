@@ -15,7 +15,7 @@
   def create
     @user = User.new(user_params)
     if @user.save
-      #UserMailer.welcome_email(@user).deliver
+      UserMailer.welcome_email(@user).deliver
       redirect_to @user, notice: 'User is created.' #redirecting to usrs/show.html
     else
       render action: 'index'                        #redirecting to users/index.html

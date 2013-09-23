@@ -22,4 +22,28 @@
     <% end %>
   </tbody>
 </table>
+
+<label>New Users :</label>
+<% if User.users_today %>
+  <% users=User.users_today %>
+  <table class='table'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td><%= link_to user.user_name, user %></td>        
+        <td><%= link_to 'Edit User', edit_user_path(user) %></td>
+        <td><%= link_to 'Delete User', user_path(user), :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
 </div>
